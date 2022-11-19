@@ -145,7 +145,7 @@ jobs:
         
     - name: Tar files
       run: | 
-        cd $GITHUB_WORKSPACE/openwrt       
+        cd openwrt       
         tar -zcvf OpenWrt_firmware${{ env.FILE_DATE }}.tar.gz ./bin/
     
     - name: Upload firmware directory
@@ -153,7 +153,7 @@ jobs:
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
         name: OpenWrt_firmware${{ env.FILE_DATE }}
-        path: $GITHUB_WORKSPACE/openwrt/OpenWrt_firmware${{ env.FILE_DATE }}.tar.gz
+        path: openwrt/OpenWrt_firmware${{ env.FILE_DATE }}.tar.gz
 
     - name: Upload firmware to cowtransfer
       id: cowtransfer
