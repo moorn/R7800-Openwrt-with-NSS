@@ -147,7 +147,7 @@ jobs:
     - name: Tar files
       run: | 
         cd $GITHUB_WORKSPACE/openwrt       
-        tar -zcvf OpenWrt_firmware${{ env.FILE_DATE }}.tar.gz ./bin
+        tar -zcvf OpenWrt_firmware${{ env.FILE_DATE }}.tar.gz ./bin/
     
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
