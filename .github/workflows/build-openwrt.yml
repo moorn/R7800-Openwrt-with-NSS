@@ -148,7 +148,9 @@ jobs:
         echo "status=success" >>$GITHUB_OUTPUT
 
     - name: TAR output
-      run: tar -zcvf openwrt-ipq806x-images-r7800-nss.tar.gz bin/
+      run: |
+        cd openwrt
+        tar -zcvf openwrt-ipq806x-images-r7800-nss.tar.gz ./bin/
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
