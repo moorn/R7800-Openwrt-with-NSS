@@ -141,18 +141,13 @@ jobs:
         rm -rf sha256sums-*
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
-        
-    - name: Tar files
-      run: | 
-        cd openwrt       
-        tar -zcvf OpenWrt_firmware${{ env.FILE_DATE }}.tar.gz ./bin/
     
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware${{ env.FILE_DATE }}
-        path: openwrt/OpenWrt_firmware${{ env.FILE_DATE }}.tar.gz
+        name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        path: ${{ env.FIRMWARE }}
 
     - name: Upload firmware to cowtransfer
       id: cowtransfer
