@@ -146,7 +146,16 @@ jobs:
         rm -rf packages-*
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >>$GITHUB_OUTPUT
-    
+
+    - name: TAR output
+      run: tar -zcvf openwrt-ipq806x-images-r7800-nss.tar.gz bin/
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+          name: openwrt-ipq806x-images-r7800-nss
+          path: openwrt-ipq806x-images-r7800-nss.tar.gz
+                
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
