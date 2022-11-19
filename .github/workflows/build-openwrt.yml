@@ -126,6 +126,17 @@ jobs:
       run: |
         cd openwrt/bin/targets/*/*
         rm -rf packages
+        rm -rf C2600*
+        rm -rf D7800*
+        rm -rf EA7500V1*
+        rm -rf EA8500*
+        rm -rf G10*
+        rm -rf NBG6817*
+        rm -rf R7500V1*
+        rm -rf R7500V2*
+        rm -rf RT4230W*
+        rm -rf XR500*
+        rm -rf openwrt-ipq806x-generic-linksys*
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
 
