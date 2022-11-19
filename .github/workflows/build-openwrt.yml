@@ -137,7 +137,6 @@ jobs:
         rm -rf openwrt-ipq806x-generic-linksys*
         rm -rf *uImage
         rm -rf *.manifest
-        rm -rf config.buildinfo*
         rm -rf *.json
         rm -rf sha256sums-*
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
