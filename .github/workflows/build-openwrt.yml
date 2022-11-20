@@ -78,8 +78,8 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
-        rm -rf openwrt/diffconfig
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+         rm -rf openwrt/diffconfig
         mv $CONFIG_FILE openwrt/diffconfig
         chmod +x $DIY_P2_SH
         $GITHUB_WORKSPACE/$DIY_P2_SH
