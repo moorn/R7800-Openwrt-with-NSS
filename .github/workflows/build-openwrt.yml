@@ -156,7 +156,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
           name: openwrt-ipq806x-images-r7800-nss
-          path: openwrt-ipq806x-images-r7800-nss.tar.gz
+          path: openwrt/openwrt-ipq806x-images-r7800-nss.tar.gz
                 
     - name: Upload firmware directory
       uses: actions/upload-artifact@main
