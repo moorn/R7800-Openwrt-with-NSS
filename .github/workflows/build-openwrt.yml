@@ -151,6 +151,7 @@ jobs:
       run: |
         cd openwrt
         tar -zcvf openwrt-ipq806x-images-r7800-nss.tar.gz ./bin/
+        echo "FILE_DATE=_$(date +"%Y%m%d%H%M")" >> $GITHUB_ENV
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
