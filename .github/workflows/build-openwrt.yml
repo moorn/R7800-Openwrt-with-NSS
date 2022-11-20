@@ -131,12 +131,11 @@ jobs:
         rm -rf *uImage
         rm -rf *.manifest
         rm -rf *.json
-        rm -rf sha256sums-*
-        rm -rf config.buildinfo-*
+        rm -rf sha256sums-Stable2203NSS-ath10k
+        rm -rf config.buildinfo-Stable2203NSS-ath10k
         rm -rf feeds.buildinfo
-        rm -rf R7800-*
-        rm -rf version.buildinfo
-        rm -rf packages-*
+        rm -rf R7800-20221111-Stable2203NSS-ath10k-*
+        rm -rf packages-Stable2203NSS-ath10k
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >>$GITHUB_OUTPUT
         
