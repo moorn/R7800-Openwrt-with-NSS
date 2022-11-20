@@ -23,7 +23,6 @@ env:
   REPO_URL: https://github.com/ACwifidude/openwrt
   REPO_BRANCH: openwrt-22.03-nss-qsdk10.0
   FEEDS_CONF: feeds.conf.default
-  CONFIG_DIFFCONFIG: diffconfig
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
@@ -79,8 +78,6 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-         rm -rf openwrt/diffconfig
-        mv $CONFIG_FILE openwrt/diffconfig
         chmod +x $DIY_P2_SH
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
